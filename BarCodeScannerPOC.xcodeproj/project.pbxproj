@@ -21,6 +21,8 @@
 		0984150618B3686C00766B81 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 098414E818B3686B00766B81 /* UIKit.framework */; };
 		0984150E18B3686C00766B81 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0984150C18B3686C00766B81 /* InfoPlist.strings */; };
 		0984151018B3686C00766B81 /* BarCodeScannerPOCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0984150F18B3686C00766B81 /* BarCodeScannerPOCTests.m */; };
+		0984151C18B36CE300766B81 /* SIAmountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0984151B18B36CE300766B81 /* SIAmountViewController.m */; };
+		0984151F18B36CF200766B81 /* SISendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0984151E18B36CF200766B81 /* SISendViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,10 @@
 		0984150B18B3686C00766B81 /* BarCodeScannerPOCTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BarCodeScannerPOCTests-Info.plist"; sourceTree = "<group>"; };
 		0984150D18B3686C00766B81 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0984150F18B3686C00766B81 /* BarCodeScannerPOCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarCodeScannerPOCTests.m; sourceTree = "<group>"; };
+		0984151A18B36CE200766B81 /* SIAmountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIAmountViewController.h; sourceTree = "<group>"; };
+		0984151B18B36CE300766B81 /* SIAmountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIAmountViewController.m; sourceTree = "<group>"; };
+		0984151D18B36CF200766B81 /* SISendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SISendViewController.h; sourceTree = "<group>"; };
+		0984151E18B36CF200766B81 /* SISendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SISendViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,10 @@
 				098414F618B3686C00766B81 /* Main.storyboard */,
 				098414F918B3686C00766B81 /* SIViewController.h */,
 				098414FA18B3686C00766B81 /* SIViewController.m */,
+				0984151A18B36CE200766B81 /* SIAmountViewController.h */,
+				0984151B18B36CE300766B81 /* SIAmountViewController.m */,
+				0984151D18B36CF200766B81 /* SISendViewController.h */,
+				0984151E18B36CF200766B81 /* SISendViewController.m */,
 				098414FC18B3686C00766B81 /* Images.xcassets */,
 				098414EB18B3686C00766B81 /* Supporting Files */,
 			);
@@ -162,6 +172,7 @@
 				098414DD18B3686B00766B81 /* Sources */,
 				098414DE18B3686B00766B81 /* Frameworks */,
 				098414DF18B3686B00766B81 /* Resources */,
+				0984151918B3691A00766B81 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -200,6 +211,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Solid Ingenuity";
 				TargetAttributes = {
+					098414E018B3686B00766B81 = {
+						DevelopmentTeam = GEH45Z9N85;
+					};
 					0984150118B3686C00766B81 = {
 						TestTargetID = 098414E018B3686B00766B81;
 					};
@@ -245,13 +259,32 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0984151918B3691A00766B81 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "#!/bin/bash\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		098414DD18B3686B00766B81 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				098414F518B3686C00766B81 /* SIAppDelegate.m in Sources */,
+				0984151F18B36CF200766B81 /* SISendViewController.m in Sources */,
 				098414FB18B3686C00766B81 /* SIViewController.m in Sources */,
+				0984151C18B36CE300766B81 /* SIAmountViewController.m in Sources */,
 				098414F118B3686C00766B81 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,10 +412,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BarCodeScannerPOC/BarCodeScannerPOC-Prefix.pch";
 				INFOPLIST_FILE = "BarCodeScannerPOC/BarCodeScannerPOC-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -392,10 +428,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BarCodeScannerPOC/BarCodeScannerPOC-Prefix.pch";
 				INFOPLIST_FILE = "BarCodeScannerPOC/BarCodeScannerPOC-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

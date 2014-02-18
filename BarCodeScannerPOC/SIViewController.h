@@ -10,4 +10,5 @@
 
 @interface SIViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIView *scanView;
 @end
