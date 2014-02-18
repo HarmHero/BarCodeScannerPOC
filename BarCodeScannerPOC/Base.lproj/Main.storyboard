@@ -7,7 +7,7 @@
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController storyboardIdentifier="scanVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vXZ-lx-hvc" customClass="SIViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScanViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vXZ-lx-hvc" customClass="SIViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uuJ-Np-raa"/>
                         <viewControllerLayoutGuide type="bottom" id="vVQ-Vu-VLd"/>
@@ -35,7 +35,7 @@
                     <navigationItem key="navigationItem" id="ym3-Ky-Mrj"/>
                     <connections>
                         <outlet property="scanView" destination="bVR-xV-3VS" id="Frj-zj-2ur"/>
-                        <segue destination="qaH-ep-ETi" kind="push" identifier="toAmount" id="mTA-gh-S5E"/>
+                        <segue destination="qaH-ep-ETi" kind="modal" identifier="toAmount" id="mTA-gh-S5E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -85,7 +85,7 @@
                         <outlet property="label" destination="N2H-cr-S8j" id="RNR-Np-CKa"/>
                         <outlet property="nextBtn" destination="uVr-2a-GcO" id="wDr-rU-rSC"/>
                         <outlet property="textField" destination="701-zs-mpO" id="GrW-Nk-6Wh"/>
-                        <segue destination="jMD-k2-Dhu" kind="push" identifier="toSend" id="bsX-c6-lvj"/>
+                        <segue destination="jMD-k2-Dhu" kind="modal" identifier="toSend" id="bsX-c6-lvj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ue-G9-L5J" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -128,9 +128,11 @@
                     <connections>
                         <outlet property="sendBtn" destination="Zm3-ZO-P0m" id="4Ug-4f-Byf"/>
                         <outlet property="textfield" destination="JLU-iu-i2d" id="4DU-7y-tXw"/>
+                        <segue destination="bxW-cQ-vse" kind="unwind" identifier="unwindToViewControllerID" unwindAction="unwindToViewController:" id="16X-m3-GlA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="st9-eK-tUq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="bxW-cQ-vse" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1053" y="287"/>
         </scene>

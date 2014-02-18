@@ -23,6 +23,8 @@
 		0984151018B3686C00766B81 /* BarCodeScannerPOCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0984150F18B3686C00766B81 /* BarCodeScannerPOCTests.m */; };
 		0984151C18B36CE300766B81 /* SIAmountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0984151B18B36CE300766B81 /* SIAmountViewController.m */; };
 		0984151F18B36CF200766B81 /* SISendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0984151E18B36CF200766B81 /* SISendViewController.m */; };
+		0984152218B36F2100766B81 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0984152018B36F2100766B81 /* AVFoundation.framework */; };
+		0984152318B36F2100766B81 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0984152118B36F2100766B81 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		0984151B18B36CE300766B81 /* SIAmountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIAmountViewController.m; sourceTree = "<group>"; };
 		0984151D18B36CF200766B81 /* SISendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SISendViewController.h; sourceTree = "<group>"; };
 		0984151E18B36CF200766B81 /* SISendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SISendViewController.m; sourceTree = "<group>"; };
+		0984152018B36F2100766B81 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		0984152118B36F2100766B81 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0984152218B36F2100766B81 /* AVFoundation.framework in Frameworks */,
+				0984152318B36F2100766B81 /* QuartzCore.framework in Frameworks */,
 				098414E718B3686B00766B81 /* CoreGraphics.framework in Frameworks */,
 				098414E918B3686B00766B81 /* UIKit.framework in Frameworks */,
 				098414E518B3686B00766B81 /* Foundation.framework in Frameworks */,
@@ -107,6 +113,8 @@
 		098414E318B3686B00766B81 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0984152018B36F2100766B81 /* AVFoundation.framework */,
+				0984152118B36F2100766B81 /* QuartzCore.framework */,
 				098414E418B3686B00766B81 /* Foundation.framework */,
 				098414E618B3686B00766B81 /* CoreGraphics.framework */,
 				098414E818B3686B00766B81 /* UIKit.framework */,
